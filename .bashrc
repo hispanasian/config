@@ -13,6 +13,11 @@ if [ -f ~/.git-prompt.sh ]; then
     source ~/.git-prompt.sh
 fi
 
+# add the git status color
+if [ -f ~/.git-status-color.sh ]; then
+    source ~/.git-status-color.sh
+fi
+
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
@@ -61,8 +66,11 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
+# enable color hints in git
+GIT_PS1_SHOWCOLORHINTS=true
+
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\] \[\033[01;34m\]\w$(__git_ps1 " (%s)")\[\033[00m\]\nλ '
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[32m\]\u@\h\[\033[00m\] \[\033[33m\]\w\[\033[0m\]$(__git_ps1 " (%s)")\[\033[00m\]\nλ '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h \w$(__git_ps1 " (%s)")\nλ '
 fi
