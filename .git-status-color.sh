@@ -12,7 +12,7 @@ __git_status_color ()
 	else
 		local color_red='\e[31m'
 		local color_yellow='\e[93m'
-		local color_cyan='\e[36m'
+		local color_green='\e[92m'
 		local color_blue='\e[34m'
 		local color_white='\e[97m'
 	fi
@@ -20,14 +20,21 @@ __git_status_color ()
 	local git_status="$(git status 2> /dev/null)"
 	local status_color="";
 
-	if [[ "$git_status" =~ "Untracked files" ]]; then
+	# Check for untracked files
+	if [ "$(git config --bool bash.showUntrackedFiles)" != "false" ] &&
+	   git ls-files --others --exclude-standard --directory --no-empty-directory --error-unmatch -- ':/*' >/dev/null 2>/dev/null
+	then
 		status_color=$color_red
-	elif [[ "$git_status" =~ "Changes not staged for commit" ]]; then
+	
+	# Check for changes to be committed
+	elif [[ "$(git diff --shortstat 2> /dev/null | tail -n1)" != "" ]]; then
 		status_color=$color_blue
-	elif [[ "$git_status" =~ "Your branch is ahead of" ]]; then
+	
+	# Check to see if there are staged changes. At this points, all files should be tracked and committed.
+	elif [[ "$(git diff --name-only --cached 2> /dev/null | tail -n1)" != "" ]]; then
 		status_color=$color_green
-	elif [[ "$git_status" =~ "nothing to commit" ]]; then
-		status_color=$color_white
+	
+	# There's nothing left. No untracked or staged files.
 	else
 		status_color=$color_white
 	fi
