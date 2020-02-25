@@ -107,8 +107,3 @@ if ! shopt -oq posix; then
     source /etc/bash_completion
   fi
 fi
-
-# enable git completion
-if [ -f ~/.config/bash/git-completion.sh ]; then
-    source ~/.config/bash/git-completion.sh
-fi
