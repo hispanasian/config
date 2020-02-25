@@ -4,12 +4,25 @@ This is my configuration for my `HOME` directory. This will be a `.config` folde
 
 ## Setup
 
-1. First, we need to create `.config`
+Ensure that you clone this repository into your `HOME` directory. To do so, run this command:
+
 ```bash
+cd ~
 git clone git@github.com:hispanasian/config.git ~/.config
 ```
-2. Now we can reference it. A sample [.profile](.profile) file is found here. You can copy it:
+
+### Bash
+
+We want to reference the provided `[bash/.bashrc](bash/.bashrc) in our profile. A sample [.profile](.profile) file is found here. You can copy it:
+
 ```bash
-cd ~/.config
-cp -f .profile ~/.profile
+cp -f ~/config/.profile ~/.profile
+```
+
+### Powershell
+
+Update your profile to point to [powershell/profile.ps`](powershell/profile.ps`). You can do so by editing your `$PROFILE` as follows:
+
+```powershell
+. $HOME\.config\powershell\profile.ps1
 ```
