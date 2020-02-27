@@ -138,12 +138,15 @@ if [ "$color_prompt" = yes ]; then
     On_IWhite="\[\033[0;107m\]"   # White
 fi
 
+# created prompt symbol by checking for root user
+prompt_symbol="`[ $(id -u) == "0" ] && echo "Λ" || echo "λ"`"
+
 # setup prompt
 PS1="${debian_chroot:+($debian_chroot)}"; # set window title
 PS1="$PS1$Green\u@\h " # user@host<space>
 PS1="$PS1$Yellow\w" # current working directory<space>
 PS1="$PS1$Cyan\`__git_ps1\`" # git prompt
-PS1="$PS1$Color_Off\nλ " # set prompt
+PS1="$PS1$Color_Off\n$prompt_symbol " # set prompt
 
 unset color_prompt force_color_prompt
 
