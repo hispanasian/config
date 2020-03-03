@@ -1,0 +1,1 @@
+function vlcpi {  $env:VAULT_ADDR = "https://vault-d-dc.mia.ucloud.int:8200"; vault login -method cert -client-cert="$env:HOME\.ssh\vault\customs-pit.pem" -client-key="$env:HOME\.ssh\vault\customs-pit-key.pem" $args }

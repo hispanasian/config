@@ -11,6 +11,10 @@ alias powershell='pwsh'
 
 # fly
 alias fm='fly -t mia'
+alias fq='fly -t qrk'
+
+# vault
+alias vlcpi='export VAULT_ADDR=https://vault-d-dc.mia.ucloud.int:8200 && vault login -method cert -client-cert=$HOME/.ssh/vault/customs-pit.pem -client-key=$HOME/.ssh/vault/customs-pit-key.pem'
 
 # wsl aliases
 if [ -f /mnt/c/WINDOWS/system32/clip.exe ]; then
