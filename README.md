@@ -21,8 +21,8 @@ cp -f ~/config/.profile ~/.profile
 
 ### Powershell
 
-Update your profile to point to [powershell/profile.ps`](powershell/profile.ps`). You can do so by editing your `$PROFILE` as follows:
+Update your profile to point to [powershell/Microsoft.PowerShell_profile.ps1`](powershell/Microsoft.PowerShell_profile.ps1`) (Powershell Core looks at this location by default). You can do so by editing your `$PROFILE` as follows:
 
 ```powershell
-. $HOME\.config\powershell\profile.ps1
+. $HOME\.config\powershell\Microsoft.PowerShell_profile.ps1
 ```
