@@ -39,4 +39,8 @@ if grep -q Microsoft /proc/version 2> /dev/null; then
   if hash vault.exe 2> /dev/null && ! hash vault 2> /dev/null; then
     alias vault='vault.exe'
   fi
+
+  if hash devenv.exe 2> /dev/null && ! hash devenv 2> /dev/null; then
+    alias devenv='devenv.exe'
+  fi
 fi

@@ -26,4 +26,9 @@ if(Select-String -Path /proc/version -Pattern "Microsoft" -ErrorAction SilentlyC
     {
         Set-Alias -Name vault -Value vault.exe
     }
+
+    if ((Get-Command devenv.exe -ErrorAction SilentlyContinue) -and -not (Get-Command devenv -ErrorAction SilentlyContinue))
+    {
+        Set-Alias -Name devenv -Value devenv.exe
+    }
 }
