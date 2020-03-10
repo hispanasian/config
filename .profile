@@ -25,3 +25,8 @@ fi
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
+
+# setup basic configs
+if hash ln 2> /dev/null; then
+    ln -s -f ~/.config/.vimrc ~/.vimrc
+fi

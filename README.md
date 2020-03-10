@@ -16,7 +16,7 @@ git clone git@github.com:hispanasian/config.git ~/.config
 We want to reference the provided `[bash/.bashrc](bash/.bashrc) in our profile. A sample [.profile](.profile) file is found here. You can copy it:
 
 ```bash
-cp -f ~/config/.profile ~/.profile
+ln -s -f ~/.config/.profile ~/.profile
 ```
 
 ### Powershell
