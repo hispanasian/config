@@ -13,6 +13,7 @@ alias fq='fly -t qrk'
 
 # vault
 alias vlcpi='export VAULT_ADDR=https://vault-d-dc.mia.ucloud.int:8200 && vault login -method cert -client-cert=$HOME/.ssh/vault/customs-pit.pem -client-key=$HOME/.ssh/vault/customs-pit-key.pem'
+alias vlairlock='export VAULT_ADDR=https://vault-d-dc.mia.ucloud.int:8200 && vault login -method cert -client-cert=$HOME/.ssh/vault/gears-customs-pit-quark.pem -client-key=$HOME/.ssh/vault/gears-customs-pit-quark-key.pem'
 
 if hash pwsh 2>/dev/null; then
   alias powershell='pwsh'

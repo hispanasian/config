@@ -1,4 +1,5 @@
 function vlcpi {  $env:VAULT_ADDR = "https://vault-d-dc.mia.ucloud.int:8200"; vault login -method cert -client-cert="$env:HOME\.ssh\vault\customs-pit.pem" -client-key="$env:HOME\.ssh\vault\customs-pit-key.pem" $args }
+function vlairlock {  $env:VAULT_ADDR = "https://vault-d-dc.mia.ucloud.int:8200"; vault login -method cert -client-cert="$env:HOME\.ssh\vault\gears-customs-pit-quark.pem" -client-key="$env:HOME\.ssh\vault\gears-customs-pit-quark.pem" $args }
 
 # wsl aliases
 if(Select-String -Path /proc/version -Pattern "Microsoft" -ErrorAction SilentlyContinue)
@@ -6,7 +7,7 @@ if(Select-String -Path /proc/version -Pattern "Microsoft" -ErrorAction SilentlyC
     # we're running in wsl
     Set-Alias -Name clip -Value clip.exe
     Set-Alias -Name explorer -Value explorer.exe
-    
+
     if ((Get-Command docker.exe -ErrorAction SilentlyContinue) -and -not (Get-Command docker -ErrorAction SilentlyContinue))
     {
         Set-Alias -Name docker -Value docker.exe
