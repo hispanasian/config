@@ -32,4 +32,9 @@ if(Select-String -Path /proc/version -Pattern "Microsoft" -ErrorAction SilentlyC
     {
         Set-Alias -Name devenv -Value devenv.exe
     }
+
+    if ((Get-Command docker-compose.exe -ErrorAction SilentlyContinue) -and -not (Get-Command docker-compose -ErrorAction SilentlyContinue))
+    {
+        Set-Alias -Name docker-compose -Value dedocker-compose.exe
+    }
 }

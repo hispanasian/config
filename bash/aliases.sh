@@ -7,6 +7,9 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
+# helpful
+alias dc='docker-compose'
+
 # fly
 alias fm='fly -t mia'
 alias fq='fly -t qrk'
@@ -43,5 +46,9 @@ if grep -q Microsoft /proc/version 2> /dev/null; then
 
   if hash devenv.exe 2> /dev/null && ! hash devenv 2> /dev/null; then
     alias devenv='devenv.exe'
+  fi
+
+  if hash docker-compose.exe 2> /dev/null && ! hash docker-compose 2> /dev/null; then
+    alias docker-compose='docker-compose.exe'
   fi
 fi
