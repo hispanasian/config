@@ -51,4 +51,8 @@ if grep -q Microsoft /proc/version 2> /dev/null; then
   if hash docker-compose.exe 2> /dev/null && ! hash docker-compose 2> /dev/null; then
     alias docker-compose='docker-compose.exe'
   fi
+
+  if hash kubectl.exe 2> /dev/null && ! hash kubectl 2> /dev/null; then
+    alias kubectl='kubectl.exe'
+  fi
 fi
