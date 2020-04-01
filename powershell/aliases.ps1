@@ -15,10 +15,6 @@ if (Select-String -Path /proc/version -Pattern "Microsoft" -ErrorAction Silently
         Set-Alias -Name gitk -Value gitk.exe
     }
 
-    if ((Get-Command fly.exe -ErrorAction SilentlyContinue) -and -not (Get-Command fly -ErrorAction SilentlyContinue)) {
-        Set-Alias -Name fly -Value fly.exe
-    }
-
     if ((Get-Command vault.exe -ErrorAction SilentlyContinue) -and -not (Get-Command vault -ErrorAction SilentlyContinue)) {
         Set-Alias -Name vault -Value vault.exe
     }

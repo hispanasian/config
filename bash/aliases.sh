@@ -36,10 +36,6 @@ if grep -q Microsoft /proc/version 2> /dev/null; then
     alias gitk='gitk.exe'
   fi
 
-  if hash fly.exe 2> /dev/null && ! hash fly 2> /dev/null; then
-    alias fly='fly.exe'
-  fi
-
   if hash vault.exe 2> /dev/null && ! hash vault 2> /dev/null; then
     alias vault='vault.exe'
   fi
