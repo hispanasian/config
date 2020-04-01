@@ -8,6 +8,13 @@ case $- in
       *) return;;
 esac
 
+# wsl
+if grep -q Microsoft /proc/version 2> /dev/null; then
+    # if we're in wsl, docker won't work. use windows' docker instance
+    # https://nickjanetakis.com/blog/setting-up-docker-for-windows-and-wsl-to-work-flawlessly
+    export DOCKER_HOST=tcp://localhost:2375
+fi
+
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
