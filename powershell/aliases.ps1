@@ -1,6 +1,13 @@
 function vlcpi { $env:VAULT_ADDR = "https://vault-d-dc.mia.ucloud.int:8200"; vault login -method cert -client-cert="$env:HOME\.ssh\vault\customs-pit.pem" -client-key="$env:HOME\.ssh\vault\customs-pit-key.pem" $args }
 function vlairlock { $env:VAULT_ADDR = "https://vault-d-dc.mia.ucloud.int:8200"; vault login -method cert -client-cert="$env:HOME\.ssh\vault\gears-customs-pit-quark.pem" -client-key="$env:HOME\.ssh\vault\gears-customs-pit-quark.pem" $args }
 
+# docker
+Set-Alias -Name d -Value docker
+Set-Alias -Name dc -Value docker-compose
+
+# kubernetes
+Set-Alias -Name k -Value kubectl
+
 # wsl aliases
 if (Select-String -Path /proc/version -Pattern "Microsoft" -ErrorAction SilentlyContinue) {
     # we're running in wsl
