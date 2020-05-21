@@ -61,7 +61,12 @@ then
 
   if hash kubectl.exe 2> /dev/null && ! hash kubectl 2> /dev/null; then
     alias kubectl='kubectl.exe'
+    alias k8s='kubectl.exe'
     alias k='kubectl.exe'
+  fi
+
+  if hash k9s.exe 2> /dev/null && ! hash k9s 2> /dev/null; then
+    alias k9s='k9s.exe'
   fi
 
 fi

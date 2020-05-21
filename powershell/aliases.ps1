@@ -36,5 +36,11 @@ if (Select-String -Path /proc/version -Pattern "Microsoft" -ErrorAction Silently
 
     if ((Get-Command kubectl.exe -ErrorAction SilentlyContinue) -and -not (Get-Command kubectl -ErrorAction SilentlyContinue)) {
         Set-Alias -Name kubectl -Value kubectl.exe
+        Set-Alias -Name k8s -Value kubectl.exe
+        Set-Alias -Name k -Value kubectl.exe
+    }
+
+    if ((Get-Command k9s.exe -ErrorAction SilentlyContinue) -and -not (Get-Command k9s -ErrorAction SilentlyContinue)) {
+        Set-Alias -Name k9s -Value k9s.exe
     }
 }
