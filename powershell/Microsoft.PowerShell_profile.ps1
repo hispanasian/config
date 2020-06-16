@@ -13,11 +13,13 @@ if (-not(Get-Module -ListAvailable -Name posh-git)) {
 }
 
 # wsl
-if (Select-String -Path /proc/version -Pattern "Microsoft" -ErrorAction SilentlyContinue) {
-    # if we're in wsl, docker won't work. use windows' docker instance
-    # https://nickjanetakis.com/blog/setting-up-docker-for-windows-and-wsl-to-work-flawlessly
-    $env:DOCKER_HOST = 'tcp://localhost:2375'
-}
+try {
+    if (Select-String -Path /proc/version -Pattern "Microsoft" -ErrorAction SilentlyContinue) {
+        # if we're in wsl, docker won't work. use windows' docker instance
+        # https://nickjanetakis.com/blog/setting-up-docker-for-windows-and-wsl-to-work-flawlessly
+        $env:DOCKER_HOST = 'tcp://localhost:2375'
+    }
+} catch {}
 
 function prompt {
     $origLastExitCode = $LASTEXITCODE
