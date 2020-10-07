@@ -31,7 +31,7 @@ then
 fi
 
 # wsl aliases
-if grep -q Microsoft /proc/version 2> /dev/null;
+if grep -i -q Microsoft /proc/version 2> /dev/null;
 then
   # we're running in wsl
   alias clip='clip.exe'
