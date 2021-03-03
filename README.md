@@ -8,7 +8,7 @@ Ensure that you clone this repository into your `HOME` directory. To do so, run 
 
 ```bash
 cd ~
-git clone git@github.com:hispanasian/config.git ~/.config
+git clone git@github.com:hispanasian/config.git .config
 ```
 
 ### Bash
