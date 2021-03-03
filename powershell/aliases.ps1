@@ -11,7 +11,7 @@ Set-Alias -Name k -Value kubectl
 # wsl aliases
 try
 {
-    if (Select-String -Path /proc/version -Pattern "Microsoft" -ErrorAction SilentlyContinue) {
+    if (Select-String -Path /proc/version -Pattern "Microsoft" -CaseSensitive -ErrorAction SilentlyContinue) {
         # we're running in wsl
         Set-Alias -Name clip -Value clip.exe
         Set-Alias -Name explorer -Value explorer.exe
