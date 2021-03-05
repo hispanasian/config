@@ -76,4 +76,8 @@ then
     alias k9s='k9s.exe'
   fi
 
+  if hash nuget.exe 2> /dev/null && ! hash nuget 2> /dev/null; then
+    alias nuget='nuget.exe'
+  fi
+
 fi

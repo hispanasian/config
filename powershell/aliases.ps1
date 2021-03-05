@@ -45,5 +45,9 @@ try
         if ((Get-Command k9s.exe -ErrorAction SilentlyContinue) -and -not (Get-Command k9s -ErrorAction SilentlyContinue)) {
             Set-Alias -Name k9s -Value k9s.exe
         }
+
+        if ((Get-Command nuget.exe -ErrorAction SilentlyContinue) -and -not (Get-Command nuget -ErrorAction SilentlyContinue)) {
+            Set-Alias -Name nuget -Value nuget.exe
+        }
     }
 } catch {}
