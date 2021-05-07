@@ -80,4 +80,8 @@ then
     alias nuget='nuget.exe'
   fi
 
+  if hash dotnet.exe 2> /dev/null && ! hash dotnet 2> /dev/null; then
+    alias dotnet='dotnet.exe'
+  fi
+
 fi

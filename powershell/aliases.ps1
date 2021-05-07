@@ -9,8 +9,7 @@ Set-Alias -Name dc -Value docker-compose
 Set-Alias -Name k -Value kubectl
 
 # wsl aliases
-try
-{
+try {
     if (Select-String -Path /proc/version -Pattern "Microsoft" -CaseSensitive -ErrorAction SilentlyContinue) {
         # we're running in wsl
         Set-Alias -Name clip -Value clip.exe
@@ -49,5 +48,10 @@ try
         if ((Get-Command nuget.exe -ErrorAction SilentlyContinue) -and -not (Get-Command nuget -ErrorAction SilentlyContinue)) {
             Set-Alias -Name nuget -Value nuget.exe
         }
+
+        if ((Get-Command dotnet.exe -ErrorAction SilentlyContinue) -and -not (Get-Command dotnet -ErrorAction SilentlyContinue)) {
+            Set-Alias -Name dotnet -Value dotnet.exe
+        }
     }
-} catch {}
+}
+catch {}
