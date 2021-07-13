@@ -1,5 +1,5 @@
 function vlcpi { $env:VAULT_ADDR = "https://vault-d-dc.mia.ucloud.int:8200"; vault login -method cert -client-cert="$HOME\.ssh\vault\customs-pit.pem" -client-key="$HOME\.ssh\vault\customs-pit-key.pem" $args }
-function vlairlock { $env:VAULT_ADDR = "https://vault-d-dc.mia.ucloud.int:8200"; vault login -method cert -client-cert="$HOME\.ssh\vault\gears-customs-pit-quark.pem" -client-key="$HOME\.ssh\vault\gears-customs-pit-quark.pem" $args }
+function vlairlock { $env:VAULT_ADDR = "https://vault-d-dc.mia.ucloud.int:8200"; vault login -method cert -client-cert="$HOME\.ssh\vault\gears-customs-pit-quark.pem" -client-key="$HOME\.ssh\vault\gears-customs-pit-quark-key.pem" $args }
 
 # docker
 Set-Alias -Name d -Value docker
