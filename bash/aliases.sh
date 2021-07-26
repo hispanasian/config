@@ -84,4 +84,7 @@ then
     alias dotnet='dotnet.exe'
   fi
 
+  if hash gh.exe 2> /dev/null && ! hash gh 2> /dev/null; then
+    alias gh='gh.exe'
+  fi
 fi

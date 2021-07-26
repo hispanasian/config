@@ -52,6 +52,10 @@ try {
         if ((Get-Command dotnet.exe -ErrorAction SilentlyContinue) -and -not (Get-Command dotnet -ErrorAction SilentlyContinue)) {
             Set-Alias -Name dotnet -Value dotnet.exe
         }
+
+        if ((Get-Command gh.exe -ErrorAction SilentlyContinue) -and -not (Get-Command gh -ErrorAction SilentlyContinue)) {
+            Set-Alias -Name gh -Value gh.exe
+        }
     }
 }
 catch {}
