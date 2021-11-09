@@ -22,7 +22,7 @@ ln -s -f ~/.config/bash/.bashrc ~/.bashrc
 
 or if you dont want to create a symbolic link, you can edit your .bash_profile and .bashrc as follows:
 
-``bash
+```bash
 echo "test -f ~/.config/bash/.profile && . ~/.config/bash/.profile" > ~.profile
 echo "test -f ~/.config/bash/.bashrc && . ~/.config/bash/.bashrc" > ~.bash_profile
 echo "test -f ~/.config/bash/.bashrc && . ~/.config/bash/.bashrc" > ~.bashrc
