@@ -30,7 +30,7 @@ echo "test -f ~/.config/bash/.bashrc && . ~/.config/bash/.bashrc" > ~.bashrc
 
 ### Powershell
 
-Update your profile to point to [powershell/Microsoft.PowerShell_profile.ps1`](powershell/Microsoft.PowerShell_profile.ps1`) (Powershell Core looks at this location by default). You can do so by editing the file at `$PROFILE` as follows:
+Update your profile to point to [powershell/Microsoft.PowerShell_profile.ps1](powershell/Microsoft.PowerShell_profile.ps1`) (Powershell Core looks at this location by default). You can do so by editing the file at `$PROFILE` as follows:
 
 ```powershell
 . $HOME\.config\powershell\Microsoft.PowerShell_profile.ps1
