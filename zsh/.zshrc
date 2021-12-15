@@ -13,17 +13,11 @@ if [ ! -d "$ZSH" ]; then
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 fi
 
-# Ensure the cmder theme is installed
-# https://github.com/potasiyam/cmder-zsh-theme
-if [ ! -f "$HOME/.oh-my-zsh/custom/themes/cmder.zsh-theme" ]; then
-    curl -L -o ~/.oh-my-zsh/custom/themes/cmder.zsh-theme https://raw.githubusercontent.com/potasiyam/cmder-zsh-theme/master/cmder.zsh-theme
-fi
-
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="cmder"
+# ZSH_THEME="cmder"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -117,3 +111,14 @@ source $ZSH/oh-my-zsh.sh
 if [ -f ~/.config/zsh/aliases.sh ]; then
     source ~/.config/zsh/aliases.sh
 fi
+
+
+# Prompt
+PROMPT='%{$FG[010]%}%~ %{$fg[cyan]%}%n@%m %{$fg_bold[white]%}$(git_super_status)%{$reset_color%} %{$fg[yellow]%}$(node_root)%{$reset_color%}
+$FG[244]%(!.#.λ)%{$reset_color%} '
+
+ZSH_THEME_GIT_PROMPT_BRANCH="%{$fg_bold[yellow]%}"
+ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[red]%} *%{$reset_color%}%{$fg_bold[white]%}"
+
+# Override the prompt declared by git-prompt which assumes the prompt is all on one line
+RPROMPT=''
