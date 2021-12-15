@@ -16,6 +16,14 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
+# if running zsh
+if [ -n "$ZSH_VERSION" ]; then
+    # include .zshrc if it exists
+    if [ -f "$HOME/.config/zsh/.zshrc" ]; then
+	. "$HOME/.config/zsh/.zshrc"
+    fi
+fi
+
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
@@ -26,12 +34,12 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
-# setup basic configs
-if hash ln 2> /dev/null; then
-    ln -s -f ~/.config/.vimrc ~/.vimrc
+# alias definitions
+if [ -f ~/.config/aliases.sh ]; then
+    source ~/.config/aliases.sh
 fi
 
-# setup gcloud
-if [ -f "$HOME/google-cloud-sdk/bin" ]; then
-    PATH="$HOME/google-cloud-sdk/bin:$PATH"
+# tools
+if [ -f ~/.config/tools.sh ]; then
+    source ~/.config/tools.sh
 fi

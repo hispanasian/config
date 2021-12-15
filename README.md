@@ -13,20 +13,37 @@ git clone git@github.com:hispanasian/config.git .config
 
 ### Bash
 
-We want to reference the provided [bash/.profile](bash/.profile) in our profile and [bash/.bashrc](bash/.bashrc). A sample [.profile](.profile) file is found here. You can copy it:
+We want to reference the provided [.profile](.profile) in our profile. A sample `.profile` file is found here. You can copy it:
 
 ```bash
-ln -s -f ~/.config/bash/.profile ~/.profile
+ln -s -f ~/.config/.profile ~/.profile
 ln -s -f ~/.config/bash/.bashrc ~/.bashrc
 ```
 
 or if you dont want to create a symbolic link, you can edit your .bash_profile and .bashrc as follows:
 
 ```bash
-echo "test -f ~/.config/bash/.profile && . ~/.config/bash/.profile" > ~.profile
+echo "test -f ~/.config/.profile && . ~/.config/.profile" > ~.profile
 echo "test -f ~/.config/bash/.bashrc && . ~/.config/bash/.bashrc" > ~.bash_profile
 echo "test -f ~/.config/bash/.bashrc && . ~/.config/bash/.bashrc" > ~.bashrc
 ```
+
+### Zsh
+
+We want to reference the provided [.profile](.profile) in our profile. A sample `.profile` file is found here. You can copy it:
+
+```zsh
+ln -s -f ~/.config/.profile ~/.profile
+ln -s -f ~/.config/zsh/.zshrc ~/.zshrc
+```
+
+or if you dont want to create a symbolic link, you can edit your .zshrc as follows:
+
+```bash
+echo "test -f ~/.config/.profile && . ~/.config/.profile" > ~.profile
+echo "test -f ~/.config/zsh/.zshrc && . ~/.config/zsh/.zshrc" > ~.bashrc
+```
+
 
 ### Powershell
 
