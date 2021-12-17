@@ -114,7 +114,7 @@ fi
 
 
 # Prompt
-PROMPT='%{$FG[010]%}%~ %{$fg[cyan]%}%n@%m %{$fg_bold[white]%}$(git_super_status)%{$reset_color%} %{$fg[yellow]%}$(node_root)%{$reset_color%}
+PROMPT='%{$FG[010]%}%~ %{$fg[cyan]%}%n@%m %{$fg_bold[white]%}$(git_super_status)%{$reset_color%} 
 $FG[244]%(!.#.λ)%{$reset_color%} '
 
 ZSH_THEME_GIT_PROMPT_BRANCH="%{$fg_bold[yellow]%}"
