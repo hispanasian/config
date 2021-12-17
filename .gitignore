@@ -1,5 +1,13 @@
-configstore/
-git/
-@quark/
-NuGet/
-gcloud/
+# Ignore everything
+*
+
+# Except for these directories
+!/bash
+!/powershell
+!/zsh
+
+# Except for these files
+.profile
+.vimrc
+/*.sh
+/*.md
