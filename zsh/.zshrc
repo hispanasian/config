@@ -114,10 +114,10 @@ fi
 
 
 # Prompt
-PROMPT='%{$FG[010]%}%~ %{$fg[cyan]%}%n@%m %{$fg_bold[white]%}$(git_super_status)%{$reset_color%} 
+PROMPT='%{$fg[green]%}%n@%m %{$fg[yellow]%}%~ %{$fg_bold[white]%}$(git_super_status)%{$reset_color%} 
 $FG[244]%(!.#.λ)%{$reset_color%} '
 
-ZSH_THEME_GIT_PROMPT_BRANCH="%{$fg_bold[yellow]%}"
+ZSH_THEME_GIT_PROMPT_BRANCH="%{$fg_bold[cyan]%}"
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[red]%} *%{$reset_color%}%{$fg_bold[white]%}"
 
 # Override the prompt declared by git-prompt which assumes the prompt is all on one line
