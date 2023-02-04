@@ -81,5 +81,5 @@ fi
 
 # OSX aliases
 if [[ $OSTYPE == 'darwin'* ]]; then
-  
+  : # populate
 fi
