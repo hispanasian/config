@@ -7,15 +7,12 @@ Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
 #. Join-Path -Path $HOME -ChildPath ".config\powershell\asliases.ps1"
 . $HOME\.config\powershell\aliases.ps1
 
-# git support
-# if (-not(Get-Module -ListAvailable -Name posh-git)) {
-#     PowerShellGet\Install-Module posh-git -Scope CurrentUser -AllowPrerelease -Force
-# }
-
 # Oh My Posh (https://ohmyposh.dev/)
 if (-not(Get-Command oh-my-posh)) {
     winget install JanDeDobbeleer.OhMyPosh -s winget
     (Get-Command oh-my-posh).Source
+    Write-Output "oh-my-posh installed. Please open pwsh as admin and run ``oh-my-posh font install Meslo`` to install font."
+    Write-Output "Then configure the terminal to use the ``MesloGM NF`` font. See https://ohmyposh.dev/docs/installation/fonts"
 }
 
 # wsl
@@ -28,17 +25,3 @@ try {
 } catch {}
 
 oh-my-posh --init --shell pwsh --config ~/.config/ohmyposh.json | Invoke-Expression
-
-# function prompt {
-#     $origLastExitCode = $LASTEXITCODE
-
-#     $prompt = ""
-
-#     $prompt = Write-Prompt "$env:UserName@$env:ComputerName " -ForegroundColor Green # user@host<space>
-#     $prompt += Write-Prompt "$($executionContext.SessionState.Path.CurrentLocation)" -ForegroundColor Yellow # current working directory
-#     $prompt += Write-VcsStatus # git status
-#     $prompt += Write-Prompt "`n>"
-
-#     $LASTEXITCODE = $origLastExitCode
-#     if ($prompt) { "$prompt " } else { " " }
-# }
