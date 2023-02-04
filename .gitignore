@@ -7,7 +7,8 @@
 !/zsh
 
 # Except for these files
-.profile
-.vimrc
-/*.sh
-/*.md
+!.profile
+!.vimrc
+!/*.sh
+!/*.md
+!ohmyposh.json
