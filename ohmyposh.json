@@ -63,9 +63,10 @@
           {
             "background": "#910000",
             "foreground": "#ffffff",
-            "powerline_symbol": "\ue0b0",
-            "style": "powerline",
+            "leading_diamond": "<transparent,#910000>\ue0b0</>",
+            "style": "diamond",
             "template": "<transparent> \uf12a</> {{ .Meaning }} ",
+            "trailing_diamond": "\ue0b0",
             "type": "exit"
           }
         ],
