@@ -57,7 +57,9 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 # enable oh-my-posh
-eval "$(oh-my-posh init bash --config ~/.config/ohmyposh.json)"
+if [ -f /usr/local/bin/oh-my-posh ]; then
+    eval "$(oh-my-posh init bash --config ~/.config/ohmyposh.json)"
+fi
 
 # enable color support of ls
 if [ -x /usr/bin/dircolors ]; then
