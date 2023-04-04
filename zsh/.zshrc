@@ -85,6 +85,6 @@ fi
 
 
 # Prompt
-if [ -f /usr/local/bin/oh-my-posh ]; then
+if [ -f /usr/local/bin/oh-my-posh ] || [ -f /opt/homebrew/bin/oh-my-posh  ]; then
     eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh.json)"
 fi

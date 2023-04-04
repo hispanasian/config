@@ -1,0 +1,38 @@
+{
+  "title": "Windows shortcuts on macOS - Slack",
+  "rules": [
+    {
+      "description": "ctrl-k Jump To in Slack",
+      "conditions": [
+        {
+          "type": "frontmost_application_if",
+          "description": "Only for Slack",
+          "bundle_identifiers": [
+            "com.tinyspeck.slackmacgap"
+          ]
+        }
+      ],
+      "manipulators": [
+        {          
+          "from": {
+            "key_code": "k",
+            "modifiers": {
+              "mandatory": [
+                "control"
+              ]
+            }
+          },          
+          "to": [
+            {
+              "key_code": "k",
+              "modifiers": [               
+                "left_command"
+              ]
+            }
+          ],
+          "type": "basic"
+        }
+      ]
+    }
+  ]
+}

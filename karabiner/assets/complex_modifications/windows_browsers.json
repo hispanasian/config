@@ -1,0 +1,87 @@
+{
+  "title": "Windows shortcuts on macOS - Browsers",
+  "rules": [
+    {
+      "description": "Ctrl+L => Cmd+L (Open url location) (Only in browsers)",
+      "manipulators": [
+        {
+          "conditions": [
+            {
+              "bundle_identifiers": [
+                "^org\\.mozilla\\.firefox$",
+                "^org\\.mozilla\\.nightly$",
+                "^com\\.microsoft\\.Edge",
+                "^com\\.google\\.Chrome$",
+                "^com\\.brave\\.Browser$",
+                "^com\\.vivaldi\\.Vivaldi$",
+                "^com\\.apple\\.Safari$"
+              ],
+              "type": "frontmost_application_if"
+            }
+          ],
+          "from": {
+            "key_code": "l",
+            "modifiers": {
+              "mandatory": [
+                "control"
+              ],
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "l",
+              "modifiers": [
+                "left_command"
+              ]
+            }
+          ],
+          "type": "basic"
+        }
+      ]
+    },
+    {
+      "description": "Ctrl+R => Cmd+R (Reload) (Only in browsers)",
+      "manipulators": [
+        {
+          "conditions": [
+            {
+              "bundle_identifiers": [
+                "^org\\.mozilla\\.firefox$",
+                "^org\\.mozilla\\.nightly$",
+                "^com\\.microsoft\\.Edge",
+                "^com\\.google\\.Chrome$",
+                "^com\\.brave\\.Browser$",
+                "^com\\.vivaldi\\.Vivaldi$",
+                "^com\\.apple\\.Safari$"
+              ],
+              "type": "frontmost_application_if"
+            }
+          ],
+          "from": {
+            "key_code": "r",
+            "modifiers": {
+              "mandatory": [
+                "control"
+              ],
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "r",
+              "modifiers": [
+                "left_command"
+              ]
+            }
+          ],
+          "type": "basic"
+        }
+      ]
+    }
+  ]
+}
