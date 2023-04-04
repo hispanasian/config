@@ -1,10 +1,14 @@
 # Ignore everything
 *
 
+# But descend into directories
+!*/
+
 # Except for these directories
-!/bash
-!/powershell
-!/zsh
+!/bash/**
+!/powershell/**
+!/zsh/**
+!/karabiner/**
 
 # Except for these files
 !.profile

@@ -87,9 +87,5 @@ Update your profile to point to [powershell/Microsoft.PowerShell_profile.ps1](po
 
 #### KeyBindings
 
-In order to use a Linux/Windows keybinding:
+In order to Windows-like keybidings, use [Karabiner-Elements](https://karabiner-elements.pqrs.org/). The config for the application should automatically pull from [~/.config/karabiner](~/.config/karabiner).
 
-```bash
-# Substitute the `Command Key` for the `Control Key` in `Keyboard -> Modifier Keys`mkdir ~/Library/KeyBindings/
-ln -s -f ~/.config/OSX/Library/KeyBindings/DefaultKeyBinding.Dict ~/Library/KeyBindings/DefaultKeyBinding.Dict
-```
