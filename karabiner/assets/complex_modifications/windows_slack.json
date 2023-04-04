@@ -5,11 +5,11 @@
       "description": "ctrl-k Jump To in Slack",
       "conditions": [
         {
-          "type": "frontmost_application_if",
           "description": "Only for Slack",
           "bundle_identifiers": [
             "com.tinyspeck.slackmacgap"
-          ]
+          ],
+          "type": "frontmost_application_if"
         }
       ],
       "manipulators": [
