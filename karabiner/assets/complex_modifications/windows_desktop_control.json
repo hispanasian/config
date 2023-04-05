@@ -2,14 +2,15 @@
     "title": "Windows shortcuts on macOS - Desktop Controls",
     "rules": [
         {
-            "description": "Win+Right Arrow, Win+Left Arrow, Win+Up Arrow, Win+Down Arrow => Ctrl+Left Arrow (Left Desktop), Ctrl+Right Arrow (Right Desktop), Ctrl+Up Arrow (Mission Control), Ctrl+Down Arrow (App Window)",
+            "description": "Ctrl+Win+Right Arrow, Ctrl+Win+Left Arrow, Win+Tan => Ctrl+Left Arrow (Left Desktop), Ctrl+Right Arrow (Right Desktop), Ctrl+Up Arrow (Mission Control)",
             "manipulators": [
                 {
                     "from": {
                         "key_code": "left_arrow",
                         "modifiers": {
                             "mandatory": [
-                                "command"
+                                "command",
+                                "control"
                             ],
                             "optional": [
                                 "any"
@@ -31,7 +32,8 @@
                         "key_code": "right_arrow",
                         "modifiers": {
                             "mandatory": [
-                                "command"
+                                "command",
+                                "control"
                             ],
                             "optional": [
                                 "any"
@@ -42,6 +44,7 @@
                         {
                             "key_code": "right_arrow",
                             "modifiers": [
+                                "command",
                                 "control"
                             ]
                         }
@@ -64,6 +67,7 @@
                         {
                             "key_code": "up_arrow",
                             "modifiers": [
+                                "command",
                                 "control"
                             ]
                         }
@@ -86,6 +90,7 @@
                         {
                             "key_code": "down_arrow",
                             "modifiers": [
+                                "command",
                                 "control"
                             ]
                         }

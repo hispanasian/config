@@ -9,6 +9,7 @@
 !/powershell/**
 !/zsh/**
 !/karabiner/**
+/karabiner/automatic_backups
 
 # Except for these files
 !.profile
