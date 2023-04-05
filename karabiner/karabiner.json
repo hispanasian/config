@@ -1013,7 +1013,9 @@
                                             "^co\\.zeit\\.hyper$",
                                             "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
                                             "^com\\.microsoft\\.rdc\\.macos$",
-                                            "^tv\\.parsec\\.www$"
+                                            "^tv\\.parsec\\.www$",
+                                            "com\\.microsoft\\.VSCode",
+                                            "com\\.jetbrains\\.intellij\\.ce"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -1126,7 +1128,9 @@
                                             "^co\\.zeit\\.hyper$",
                                             "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
                                             "^com\\.microsoft\\.rdc\\.macos$",
-                                            "^tv\\.parsec\\.www$"
+                                            "^tv\\.parsec\\.www$",
+                                            "com\\.microsoft\\.VSCode",
+                                            "com\\.jetbrains\\.intellij\\.ce"
                                         ],
                                         "type": "frontmost_application_unless"
                                     }
@@ -2136,79 +2140,9 @@
                         ]
                     },
                     {
-                        "description": "IDE Text manipulation",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "com\\.microsoft\\.VSCode",
-                                            "com\\.jetbrains\\.intellij\\.ce"
-                                        ],
-                                        "type": "frontmost_application_if"
-                                    }
-                                ],
-                                "description": "Ctrl+/ => Cmd+/ (Comment)",
-                                "from": {
-                                    "key_code": "slash",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "control"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "slash",
-                                        "modifiers": [
-                                            "left_command"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "com\\.microsoft\\.VSCode",
-                                            "com\\.jetbrains\\.intellij\\.ce"
-                                        ],
-                                        "type": "frontmost_application_if"
-                                    }
-                                ],
-                                "description": "Ctrl+D => Cmd+D Duplicate line",
-                                "from": {
-                                    "key_code": "d",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "control"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "d",
-                                        "modifiers": [
-                                            "left_command"
-                                        ]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "IDE navigation",
                         "manipulators": [
                             {
-                                "description": "Ctrl+E => Cmd+E (Command Palette)",
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
@@ -2218,6 +2152,7 @@
                                         "type": "frontmost_application_if"
                                     }
                                 ],
+                                "description": "Ctrl+E => Cmd+E (Command Palette)",
                                 "from": {
                                     "key_code": "e",
                                     "modifiers": {
@@ -2237,7 +2172,6 @@
                                 "type": "basic"
                             },
                             {
-                                "description": "Ctrl+` => Cmd+` (Command Palette)",
                                 "conditions": [
                                     {
                                         "bundle_identifiers": [
@@ -2247,6 +2181,7 @@
                                         "type": "frontmost_application_if"
                                     }
                                 ],
+                                "description": "Ctrl+` => Cmd+` (Command Palette)",
                                 "from": {
                                     "key_code": "grave_accent_and_tilde",
                                     "modifiers": {
@@ -2324,6 +2259,137 @@
                                         "key_code": "v",
                                         "modifiers": [
                                             "left_command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "IDE text manipulation",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "com\\.microsoft\\.VSCode",
+                                            "com\\.jetbrains\\.intellij\\.ce"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "description": "Ctrl+/ => Cmd+/ (Comment)",
+                                "from": {
+                                    "key_code": "slash",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "slash",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "com\\.microsoft\\.VSCode",
+                                            "com\\.jetbrains\\.intellij\\.ce"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "description": "Ctrl+D => Cmd+D Duplicate line",
+                                "from": {
+                                    "key_code": "d",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "d",
+                                        "modifiers": [
+                                            "left_command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "com\\.microsoft\\.VSCode"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "description": "Ctrl+Home, Ctrl+Shift+Home => Cmd+Up arrow, Cmd+Shift+Up arrow (Move cursor to beginning of file with and without selection)",
+                                "from": {
+                                    "key_code": "home",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control"
+                                        ],
+                                        "optional": [
+                                            "shift"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "up_arrow",
+                                        "modifiers": [
+                                            "command"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "com\\.microsoft\\.VSCode"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "description": "Ctrl+End, Ctrl+Shift+End => Cmd+down arrow, Cmd+Shift+down arrow (Move cursor to end of file with and without selection)",
+                                "from": {
+                                    "key_code": "end",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control"
+                                        ],
+                                        "optional": [
+                                            "shift"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "down_arrow",
+                                        "modifiers": [
+                                            "command"
                                         ]
                                     }
                                 ],
