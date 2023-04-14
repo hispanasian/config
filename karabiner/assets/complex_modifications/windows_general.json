@@ -842,9 +842,7 @@
                                 "^co\\.zeit\\.hyper$",
                                 "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
                                 "^com\\.microsoft\\.rdc\\.macos$",
-                                "^tv\\.parsec\\.www$",
-                                "com\\.microsoft\\.VSCode",
-                                "com\\.jetbrains\\.intellij\\.ce"
+                                "^tv\\.parsec\\.www$"
                             ],
                             "type": "frontmost_application_unless"
                         }
@@ -957,9 +955,7 @@
                                 "^co\\.zeit\\.hyper$",
                                 "^org\\.virtualbox\\.app\\.VirtualBoxVM$",
                                 "^com\\.microsoft\\.rdc\\.macos$",
-                                "^tv\\.parsec\\.www$",
-                                "com\\.microsoft\\.VSCode",
-                                "com\\.jetbrains\\.intellij\\.ce"
+                                "^tv\\.parsec\\.www$"
                             ],
                             "type": "frontmost_application_unless"
                         }
